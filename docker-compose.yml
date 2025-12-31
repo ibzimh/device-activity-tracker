@@ -5,6 +5,8 @@ services:
       dockerfile: Dockerfile
       args:
         - PORT=${BACKEND_PORT:-3001}
+    extra_hosts:
+      - "localhost:host-gateway"
     ports:
       - "${BACKEND_PORT:-3001}:${BACKEND_PORT:-3001}"
     environment:
